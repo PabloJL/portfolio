@@ -1,5 +1,7 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import ProjectCard from "../ProjectCard";
+import ProjectTag from "./ProjectTag";
 
 const projectsData = [
   {
@@ -34,7 +36,7 @@ const projectsData = [
     title: "Food Ordering Website",
     description: "Project 4 Description",
     image: "/images/projects/4.png",
-    tag: ["All", "Web"],
+    tag: ["All", "Mobile"],
     git: "/",
     preview: "/",
   },
@@ -59,13 +61,40 @@ const projectsData = [
 ];
 
 function ProjectsSection() {
+  const [filter, setFilter] = useState("All");
+
+  const handleFilterChange = (newTag) => {
+    setFilter(newTag);
+  };
+
+  const filteredProjects = projectsData.filter((project) =>
+    project.tag.includes(filter)
+  );
+
   return (
     <div>
       <h2 className="text-center text-4xl font-bold text-white mt-4 mb-8 md:mb-12">
         My Projects
       </h2>
+      <div className="text-white flex justify-center items-center gap-2 py-6">
+        <ProjectTag
+          onClick={handleFilterChange}
+          name="All"
+          isSelected={filter === "All"}
+        />
+        <ProjectTag
+          onClick={handleFilterChange}
+          name="Web"
+          isSelected={filter === "Web"}
+        />
+        <ProjectTag
+          onClick={handleFilterChange}
+          name="Mobile"
+          isSelected={filter === "Mobile"}
+        />
+      </div>
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
-        {projectsData.map((project) => (
+        {filteredProjects.map((project) => (
           <ProjectCard
             key={project.id}
             title={project.title}
