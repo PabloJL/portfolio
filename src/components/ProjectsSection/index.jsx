@@ -1,7 +1,8 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import ProjectCard from "../ProjectCard";
 import ProjectTag from "./ProjectTag";
+import { motion, useInView } from "framer-motion";
 
 const projectsData = [
   {
@@ -63,6 +64,9 @@ const projectsData = [
 function ProjectsSection() {
   const [filter, setFilter] = useState("All");
 
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+
   const handleFilterChange = (newTag) => {
     setFilter(newTag);
   };
@@ -71,8 +75,13 @@ function ProjectsSection() {
     project.tag.includes(filter)
   );
 
+  const cardVariants = {
+    initial: { y: 50, opacity: 0 },
+    animate: { y: 0, opacity: 1 },
+  };
+
   return (
-    <div>
+    <div ref={ref}>
       <h2 className="text-center text-4xl font-bold text-white mt-4 mb-8 md:mb-12">
         My Projects
       </h2>
@@ -93,18 +102,29 @@ function ProjectsSection() {
           isSelected={filter === "Mobile"}
         />
       </div>
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
-        {filteredProjects.map((project) => (
-          <ProjectCard
-            key={project.id}
-            title={project.title}
-            description={project.description}
-            imgUrl={project.image}
-            gitURL={project.git}
-            previewUrl={project.preview}
-          />
+      <ul
+        ref={ref}
+        className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12"
+      >
+        {filteredProjects.map((project, index) => (
+          <motion.li
+            key={index}
+            variants={cardVariants}
+            initial="initial"
+            animate={isInView ? "animate" : "initial"}
+            transition={{ duration: 0.3, delay: index * 0.4 }}
+          >
+            <ProjectCard
+              key={project.id}
+              title={project.title}
+              description={project.description}
+              imgUrl={project.image}
+              gitURL={project.git}
+              previewUrl={project.preview}
+            />
+          </motion.li>
         ))}
-      </div>
+      </ul>
     </div>
   );
 }

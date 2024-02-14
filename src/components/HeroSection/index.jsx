@@ -2,12 +2,18 @@
 import React from "react";
 import Image from "next/image";
 import { TypeAnimation } from "react-type-animation";
+import { animate, motion } from "framer-motion";
 
 function HeroSection() {
   return (
     <section className="lg:py-16 ">
       <div className="grid grid-cols-1 sm:grid-cols-12 ">
-        <div className="col-span-8 place-self-center text-center sm:text-left justify-self-start">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5 }}
+          className="col-span-8 place-self-center text-center sm:text-left justify-self-start"
+        >
           <h1 className="text-white mb-4 text-4xl sm:text-5xl lg:text-7xl lg:leading-normal font-extrabold">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-600 to-indigo-600 hover:bg-slate-200 ">
               Hello, I&apos;m
@@ -42,8 +48,13 @@ function HeroSection() {
               Download CV
             </button>
           </div>
-        </div>
-        <div className="col-span-4 place-content-center mt-10 lg:mt-0 mx-auto lg:place-content-start text-center relative inline-block">
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.3 }}
+          className="col-span-4 place-content-center mt-10 lg:mt-0 mx-auto lg:place-content-start text-center relative inline-block"
+        >
           <div className="mx-auto bg-gradient-to-b from-indigo-600 rounded-full w-[250px] h-[250px] lg:w-[400px] lg:h-[390px]  relative overflow-hidden  ">
             <Image
               src="/images/me.png"
@@ -52,15 +63,7 @@ function HeroSection() {
               objectFit="cover"
             />
           </div>
-          {/* <div className="rounded-full bg-[#181818] w-[250px] h-[250px] lg:w-[400px] lg:h-[390px] relative inline-block">
-            <Image
-              src="/images/me.png"
-              alt="me"
-              layout="fill"
-              objectFit="cover"
-            />
-          </div> */}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
