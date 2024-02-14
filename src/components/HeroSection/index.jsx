@@ -5,10 +5,10 @@ import { TypeAnimation } from "react-type-animation";
 
 function HeroSection() {
   return (
-    <section className=" mt-10">
+    <section className="lg:py-16 ">
       <div className="grid grid-cols-1 sm:grid-cols-12 ">
-        <div className="col-span-7 place-self-center text-center sm:text-left">
-          <h1 className="text-white mb-4 text-4xl sm:text-5xl lg:text-6xl font-extrabold">
+        <div className="col-span-8 place-self-center text-center sm:text-left justify-self-start">
+          <h1 className="text-white mb-4 text-4xl sm:text-5xl lg:text-7xl lg:leading-normal font-extrabold">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-600 to-indigo-600 hover:bg-slate-200 ">
               Hello, I&apos;m
             </span>
@@ -43,7 +43,7 @@ function HeroSection() {
             </button>
           </div>
         </div>
-        <div className="col-span-5 place-content-center mt-10 lg:mt-0 mx-auto lg:place-content-start text-center relative inline-block">
+        <div className="col-span-4 place-content-center mt-10 lg:mt-0 mx-auto lg:place-content-start text-center relative inline-block">
           <div className="mx-auto bg-gradient-to-b from-indigo-600 rounded-full w-[250px] h-[250px] lg:w-[400px] lg:h-[390px]  relative overflow-hidden  ">
             <Image
               src="/images/me.png"
