@@ -69,6 +69,7 @@ function HeroSection() {
             <Image
               src="/images/me.png"
               alt="me"
+              className=" object-cover"
               layout="fill"
               objectFit="cover"
             />

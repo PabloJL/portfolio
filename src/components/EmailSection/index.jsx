@@ -51,7 +51,7 @@ function EmailSection() {
           I&apos;m excited to engage with fellow enthusiasts, collaborators, and
           curious minds alike.
         </p>
-        <div className="socials flex gap-2 sm:mb-4">
+        <div className="socials flex gap-2 sm:mb-4 text-white">
           <a
             target="_blank"
             rel="noopener noreferrer"
