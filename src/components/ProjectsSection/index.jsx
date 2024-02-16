@@ -7,17 +7,19 @@ import { motion, useInView } from "framer-motion";
 const projectsData = [
   {
     id: 1,
-    title: "React Portfolio Website",
-    description: "Project 1 Description",
-    image: "/images/projects/1.png",
+    title: "My Portolio",
+    description:
+      "My portfolio showcasing all my projects, you are currently here!!",
+    image: "/images/projects/portfolio.png",
     tag: ["All", "Web"],
-    git: "/",
+    git: "https://github.com/PabloJL/portfolio",
     preview: "/",
   },
   {
     id: 2,
     title: "To Do App",
-    description: "This To do app helps you keep track of your daily tasks!!",
+    description:
+      "This To do app helps you keep track of your daily tasks so you don´t forget anything",
     image: "/images/projects/todo.png",
     tag: ["All", "Web"],
     git: "https://github.com/PabloJL/TODO-App",
@@ -42,24 +44,24 @@ const projectsData = [
     git: "/",
     preview: "/",
   },
-  {
-    id: 5,
-    title: "React Firebase Template",
-    description: "Project 5 Description",
-    image: "/images/projects/5.png",
-    tag: ["All", "Web"],
-    git: "/",
-    preview: "/",
-  },
-  {
-    id: 6,
-    title: "Full-Stack Roadmap",
-    description: "Project 6 Description",
-    image: "/images/projects/6.png",
-    tag: ["All", "Web"],
-    git: "/",
-    preview: "/",
-  },
+  // {
+  //   id: 5,
+  //   title: "React Firebase Template",
+  //   description: "Project 5 Description",
+  //   image: "/images/projects/5.png",
+  //   tag: ["All", "Web"],
+  //   git: "/",
+  //   preview: "/",
+  // },
+  // {
+  //   id: 6,
+  //   title: "Full-Stack Roadmap",
+  //   description: "Project 6 Description",
+  //   image: "/images/projects/6.png",
+  //   tag: ["All", "Web"],
+  //   git: "/",
+  //   preview: "/",
+  // },
 ];
 
 function ProjectsSection() {
