@@ -1,7 +1,6 @@
 "use client";
 import React, { useState } from "react";
 import { IoLogoGithub, IoLogoLinkedin, IoLogoInstagram } from "react-icons/io5";
-import Link from "next/link";
 
 function EmailSection() {
   const [emailSubmitted, setEmailSubmitted] = useState(false);
@@ -46,18 +45,34 @@ function EmailSection() {
           Let&apos;s connect
         </h5>
         <p className=" text-[#ADB7BE] mb-4 max-w-md ">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo
-          suscipit, quasi expedita corporis aspernatur ipsum! Unde quod debitis
-          qui, nulla aperiam hic blanditiis nostrum labore ut obcaecati error
-          quam magni.
+          Whether you&apos;re interested in exploring my latest coding projects,
+          delving into my professional journey, or catching a glimpse of my
+          creative side, I invite you to connect with me across these platforms.
+          I&apos;m excited to engage with fellow enthusiasts, collaborators, and
+          curious minds alike.
         </p>
         <div className="socials flex gap-2 sm:mb-4">
-          <Link href="/">
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://github.com/PabloJL"
+          >
             <IoLogoGithub className=" text-4xl" />
-          </Link>
-          <Link href="/">
+          </a>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.linkedin.com/in/JPLJ1802"
+          >
             <IoLogoLinkedin className=" text-4xl" />
-          </Link>
+          </a>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.instagram.com/jp.jsx/"
+          >
+            <IoLogoInstagram className=" text-4xl" />
+          </a>
         </div>
       </div>
       <div>
