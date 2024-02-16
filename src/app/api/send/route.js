@@ -1,9 +1,9 @@
 // import { EmailTemplate } from '../../../components/EmailTemplate';
 import { Resend } from "resend";
 
-const resend = new Resend(process.env.REACT_APP_RESEND_API_KEY);
-const fromEmail = process.env.REACT_APP_FROM_EMAIL;
-const personalEmail = process.env.REACT_APP_PERSONAL_EMAIL;
+const resend = new Resend(process.env.RESEND_API_KEY);
+const fromEmail = process.env.FROM_EMAIL;
+const personalEmail = process.env.PERSONAL_EMAIL;
 
 export async function POST(req, res) {
   const { email, subject, message } = await req.json();
