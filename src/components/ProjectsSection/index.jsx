@@ -42,8 +42,8 @@ const projectsData = [
     description: "Share your thoughts, comment and like other peoples posts😁",
     image: "/images/projects/post-it.png",
     tag: ["All", "Web"],
-    git: "/",
-    preview: "/",
+    git: "https://github.com/PabloJL/post-it",
+    preview: "https://post-it-olive.vercel.app/",
   },
   // {
   //   id: 5,
